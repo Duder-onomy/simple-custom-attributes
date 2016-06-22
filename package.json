@@ -1,0 +1,19 @@
+{
+  "name": "simple-custom-attributes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Duder-onomy/simple-custom-attributes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Duder-onomy/simple-custom-attributes/issues"
+  },
+  "homepage": "https://github.com/Duder-onomy/simple-custom-attributes#readme",
+  "description": ""
+}
