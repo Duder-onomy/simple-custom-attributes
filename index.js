@@ -17,7 +17,7 @@ module.exports = {
 };
 
 function register(object, rootElement) {
-    this.attributesMap.keys().forEach(function(customAttribute) {
+    Object.keys(this.attributesMap).forEach(function(customAttribute) {
         [].forEach.call(rootElement.querySelectorAll('['+customAttribute+']'), function(element) {
 
             if(typeof object[element.getAttribute(customAttribute)] === 'function') {
@@ -33,7 +33,7 @@ function register(object, rootElement) {
 }
 
 function unregister(object, rootElement) {
-    this.attributesMap.keys().forEach(function(customAttribute) {
+    Object.keys(this.attributesMap).forEach(function(customAttribute) {
         [].forEach.call(rootElement.querySelectorAll('['+customAttribute+']'), function(element) {
 
             if(typeof object[element.getAttribute(customAttribute)] === 'function') {
