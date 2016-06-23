@@ -13,7 +13,9 @@ module.exports = {
     },
 
     register : register,
-    unregister : unregister
+    unregister : unregister,
+
+    addAttribute : addAttribute
 };
 
 function register(object, rootElement) {
@@ -22,6 +24,8 @@ function register(object, rootElement) {
 
             if(typeof object[element.getAttribute(customAttribute)] === 'function') {
                 _registerFunction.call(this, object, element, customAttribute);
+            } else if(object[element.getAttribute(customAttribute)] !== undefined){
+                this.attributesMap[customAttribute].bind(element, object[element.getAttribute(customAttribute)]);
             } else {
                 this.attributesMap[customAttribute].bind(element, element.getAttribute(customAttribute));
             }
@@ -36,12 +40,18 @@ function unregister(object, rootElement) {
 
             if(typeof object[element.getAttribute(customAttribute)] === 'function') {
                 _unregisterFunction.call(this, object, element, customAttribute);
+            } else if(object[element.getAttribute(customAttribute)] !== undefined) {
+                this.attributesMap[customAttribute].unbind(element, object[element.getAttribute(customAttribute)]);
             } else {
                 this.attributesMap[customAttribute].unbind(element, element.getAttribute(customAttribute));
             }
 
         }.bind(this));
     }.bind(this));
+}
+
+function addAttribute(attributeName, customAttributeObj) {
+    this.attributesMap[attributeName] = customAttributeObj;
 }
 
 function _registerFunction(object, element, customAttribute) {
