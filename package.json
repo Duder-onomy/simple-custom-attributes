@@ -15,5 +15,9 @@
     "url": "https://github.com/Duder-onomy/simple-custom-attributes/issues"
   },
   "homepage": "https://github.com/Duder-onomy/simple-custom-attributes#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "clamp-js": "^0.7.0",
+    "hammerjs": "^2.0.8"
+  }
 }
