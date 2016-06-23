@@ -70,9 +70,9 @@ Note: The `this` scope of the method (if you are passing a method to the binding
 
 ## Examples
 
-1. Lets say you have a off-canvas menu and you wanted to make a swipe gesture close it.  You would add a `on-swipe-right` attribute passing a method you want to call when the swipe right is complete.
+#### Lets say you have a off-canvas menu and you wanted to make a swipe gesture close it.  You would add a `on-swipe-right` attribute passing a method you want to call when the swipe right is complete.
 
-    The DOM.
+The DOM.
 ```html
 <div class='off-canvas-nav-thing' on-swipe-right='closeNav'>
   // Nav HTML HERE
@@ -95,7 +95,7 @@ simpleCustomAttributes.register(view, document.querySelector('.off-canvas-nav-th
 When the user swipes right, it will call that `closeNav` function.
 
 
-2. Lets say you had a element that has some fat paragraph of text in it and you wanted to clamp that to 3 lines.
+#### Lets say you had a element that has some fat paragraph of text in it and you wanted to clamp that to 3 lines.
 
 The DOM.
 ```html
@@ -116,7 +116,7 @@ simpleCustomAttributes.register(view, document.querySelector('.some-fat-text-in-
 
 After the registration is complete, that pile of text will be truncated to 3 lines.
 
-3. Simple click handler.
+#### Simple click handler.
 
 The DOM.
 ```html
@@ -139,7 +139,7 @@ simpleCustomAttributes.register(view, document.querySelector('.clicky-mc-click-f
 Will call the `yeahBuddy` method when the element is clicked.
 
 
-## Define your own.
+## Define your own custom attribute.
 
 Each custom attribute must have the following methods.
 ```javascript
