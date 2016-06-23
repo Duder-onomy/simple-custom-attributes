@@ -73,70 +73,70 @@ Note: The `this` scope of the method (if you are passing a method to the binding
 1. Lets say you have a off-canvas menu and you wanted to make a swipe gesture close it.  You would add a `on-swipe-right` attribute passing a method you want to call when the swipe right is complete.
 
     The DOM.
-    ```html
-    <div class='off-canvas-nav-thing' on-swipe-right='closeNav'>
-        // Nav HTML HERE
-    </div>
-    ```
+```html
+<div class='off-canvas-nav-thing' on-swipe-right='closeNav'>
+  // Nav HTML HERE
+</div>
+```
 
-    The view
-    ```javascript
-    var simpleCustomAttributes = require('simple-custom-attributes'),
-        view = {
-            closeNav : function() {
-                // code to close the nav.
-                // Note: `this` in here === the `view`
-            }
-        };
+The view
+```javascript
+var simpleCustomAttributes = require('simple-custom-attributes'),
+    view = {
+        closeNav : function() {
+            // code to close the nav.
+            // Note: `this` in here === the `view`
+        }
+    };
 
-    simpleCustomAttributes.register(view, document.querySelector('.off-canvas-nav-thing'));
-    ```
+simpleCustomAttributes.register(view, document.querySelector('.off-canvas-nav-thing'));
+```
 
-    When the user swipes right, it will call that `closeNav` function.
+When the user swipes right, it will call that `closeNav` function.
 
 
 2. Lets say you had a element that has some fat paragraph of text in it and you wanted to clamp that to 3 lines.
 
-    The DOM.
-    ```html
-    <div class='some-fat-text-in-here' line-clamp='model.linesToClampTheFatText'>
-        400 lines of lorem ipsum.
-    </div>
-    ```
+The DOM.
+```html
+<div class='some-fat-text-in-here' line-clamp='model.linesToClampTheFatText'>
+    400 lines of lorem ipsum.
+</div>
+```
 
-    The View.
-    ```javascript
-    var simpleCustomAttributes = require('simple-custom-attributes'),
-        model = {
-            linesToClampTheFatText : 3
-        };
+The View.
+```javascript
+var simpleCustomAttributes = require('simple-custom-attributes'),
+    model = {
+        linesToClampTheFatText : 3
+    };
 
-    simpleCustomAttributes.register(view, document.querySelector('.some-fat-text-in-here'));
-    ```
+simpleCustomAttributes.register(view, document.querySelector('.some-fat-text-in-here'));
+```
 
-    After the registration is complete, that pile of text will be truncated to 3 lines.
+After the registration is complete, that pile of text will be truncated to 3 lines.
 
 3. Simple click handler.
 
-    The DOM.
-    ```html
-    <div class='clicky-mc-click-face' on-click='yeahBuddy'>
-    </div>
-    ```
+The DOM.
+```html
+<div class='clicky-mc-click-face' on-click='yeahBuddy'>
+</div>
+```
 
-    The View.
-    ```javascript
-    var simpleCustomAttributes = require('simple-custom-attributes'),
-        view = {
-            yeahBuddy : function() {
+The View.
+```javascript
+var simpleCustomAttributes = require('simple-custom-attributes'),
+    view = {
+        yeahBuddy : function() {
 
-            }
-        };
+        }
+    };
 
-    simpleCustomAttributes.register(view, document.querySelector('.clicky-mc-click-face'));
-    ```
+simpleCustomAttributes.register(view, document.querySelector('.clicky-mc-click-face'));
+```
 
-    Will call the `yeahBuddy` method when the element is clicked.
+Will call the `yeahBuddy` method when the element is clicked.
 
 
 ## Define your own.
