@@ -1,7 +1,5 @@
 'use strict';
 
-var keys = require('lodash/keys');
-
 module.exports = {
     attributesMap : {
         'on-click' : require('.attributes/click'),
@@ -19,7 +17,7 @@ module.exports = {
 };
 
 function register(object, rootElement) {
-    keys(this.attributesMap).forEach(function(customAttribute) {
+    this.attributesMap.keys().forEach(function(customAttribute) {
         [].forEach.call(rootElement.querySelectorAll('['+customAttribute+']'), function(element) {
 
             if(typeof object[element.getAttribute(customAttribute)] === 'function') {
@@ -35,7 +33,7 @@ function register(object, rootElement) {
 }
 
 function unregister(object, rootElement) {
-    keys(this.attributesMap).forEach(function(customAttribute) {
+    this.attributesMap.keys().forEach(function(customAttribute) {
         [].forEach.call(rootElement.querySelectorAll('['+customAttribute+']'), function(element) {
 
             if(typeof object[element.getAttribute(customAttribute)] === 'function') {
