@@ -16,40 +16,6 @@ This library makes custom attribute binding super easy without having to use som
 
 You can define your own with a simple attribute binding API.
 
-Right now, we support the following:
-
-line-clamp='model.linesToClamp'
-```html
-<div line-clamp='4'>
-    This text will be clamped to 4 lines with an ellipsis at the end.
-</div>
-```
-
-on-mouse-in='someMethod'
-```html
-<div on-mouse-in='someMethod'></div>
-```
-
-on-mouse-out='someMethod'
-```html
-<div on-mouse-out='someMethod'></div>
-```
-
-on-swipe-left='someMethod'
-```html
-<div on-swipe-left='someMethod'></div>
-```
-
-on-swipe-right='someMethod'
-```html
-<div on-swipe-right='someMethod'></div>
-```
-
-on-click='someMethod'
-```html
-<div on-click='someMethod'></div>
-```
-
 ## Using The Library
 
 1. `npm install --save-dev simple-custom-attributes`
@@ -173,6 +139,78 @@ simpleCustomAttributes.addAttribute('on-input', {
         el.removeEventListener('input', value, false);
     }
 })
+```
+
+## Semi Baked in Attributes
+
+Right now, we included the following into the library cause I use them all the time:
+
+#### line-clamp='model.linesToClamp'
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('line-clamp', require('simple-custom-attributes/attributes/line-clamp'));
+```
+
+```html
+<div line-clamp='4'>
+    This text will be clamped to 4 lines with an ellipsis at the end.
+</div>
+```
+
+#### on-mouse-in='someMethod'
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('on-mouse-in', require('simple-custom-attributes/attributes/on-mouse-in'));
+```
+
+```html
+<div on-mouse-in='someMethod'></div>
+```
+
+#### on-mouse-out='someMethod'
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('on-mouse-out', require('simple-custom-attributes/attributes/on-mouse-out'));
+```
+
+```html
+<div on-mouse-out='someMethod'></div>
+```
+
+#### on-swipe-left='someMethod'
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('on-swipe-left', require('simple-custom-attributes/attributes/on-swipe-left'));
+```
+
+```html
+<div on-swipe-left='someMethod'></div>
+```
+
+#### on-swipe-right='someMethod'
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('on-swipe-right', require('simple-custom-attributes/attributes/on-swipe-right'));
+```
+
+```html
+<div on-swipe-right='someMethod'></div>
+```
+
+#### on-click='someMethod'
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('on-click', require('simple-custom-attributes/attributes/on-click'));
+```
+
+```html
+<div on-click='someMethod'></div>
 ```
 
 Let me know how it goes!!!

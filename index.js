@@ -1,14 +1,7 @@
 'use strict';
 
 module.exports = {
-    attributesMap : {
-        'on-click' : require('./attributes/click'),
-        'on-swipe-right' : require('./attributes/swipeRight'),
-        'on-swipe-left' : require('./attributes/swipeLeft'),
-        'on-mouse-in' : require('./attributes/onMouseIn'),
-        'on-mouse-out' : require('./attributes/onMouseOut'),
-        'line-clamp' : require('./attributes/line-clamp')
-    },
+    attributesMap : {},
 
     register : register,
     unregister : unregister,
