@@ -114,6 +114,8 @@ Each custom attribute must have the following methods.
         // el === The element in question.
         // value === could be a function, a value, anything really. Depends on what you passed the binding.
 
+        // NOTE: The scope of this closure is the bound object. so, `this` === the view you are binding
+
         // You add event listeners, do work etc here.
     },
     unbind : function(el, value) {
@@ -211,6 +213,17 @@ customAttributes.addAttribute('on-click', require('simple-custom-attributes/attr
 
 ```html
 <div on-click='someMethod'></div>
+```
+
+#### on-event='{ event : method, event : method }'
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('on-event', require('simple-custom-attributes/attributes/on-event'));
+```
+
+```html
+<div on-event='{ mouseover : handleMouseOver, mouseout : handleMouseOut }'></div>
 ```
 
 Let me know how it goes!!!

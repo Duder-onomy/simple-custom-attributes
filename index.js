@@ -16,9 +16,9 @@ function register(object, rootElement) {
             if(typeof object[element.getAttribute(customAttribute)] === 'function') {
                 _registerFunction.call(this, object, element, customAttribute);
             } else if(object[element.getAttribute(customAttribute)] !== undefined){
-                this.attributesMap[customAttribute].bind(element, object[element.getAttribute(customAttribute)]);
+                this.attributesMap[customAttribute].bind.call(object, element, object[element.getAttribute(customAttribute)]);
             } else {
-                this.attributesMap[customAttribute].bind(element, element.getAttribute(customAttribute));
+                this.attributesMap[customAttribute].bind.call(object, element, element.getAttribute(customAttribute));
             }
 
         }.bind(this));
@@ -32,9 +32,9 @@ function unregister(object, rootElement) {
             if(typeof object[element.getAttribute(customAttribute)] === 'function') {
                 _unregisterFunction.call(this, object, element, customAttribute);
             } else if(object[element.getAttribute(customAttribute)] !== undefined) {
-                this.attributesMap[customAttribute].unbind(element, object[element.getAttribute(customAttribute)]);
+                this.attributesMap[customAttribute].unbind.call(object, element, object[element.getAttribute(customAttribute)]);
             } else {
-                this.attributesMap[customAttribute].unbind(element, element.getAttribute(customAttribute));
+                this.attributesMap[customAttribute].unbind.call(object, element, element.getAttribute(customAttribute));
             }
 
         }.bind(this));
@@ -50,9 +50,9 @@ function _registerFunction(object, element, customAttribute) {
 
     object[element.getAttribute(customAttribute)] = handler;
 
-    this.attributesMap[customAttribute].bind(element, handler);
+    this.attributesMap[customAttribute].bind.call(object, element, handler);
 }
 
 function _unregisterFunction(object, element, customAttribute) {
-    this.attributesMap[customAttribute].unbind(element, object[element.getAttribute(customAttribute)]);
+    this.attributesMap[customAttribute].unbind.call(object, element, object[element.getAttribute(customAttribute)]);
 }
