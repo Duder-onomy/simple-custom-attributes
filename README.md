@@ -237,4 +237,15 @@ customAttributes.addAttribute('on-click-and-hold', require('simple-custom-attrib
 <div on-click-and-hold='someMethod'></div>
 ```
 
+### on-enter-viewport (NOTE!!!! THIS ONLY WORKS IN CHROME 51 BECAUSE IT USES INTERSECTION OBSERVERS)
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('on-enter-viewport', require('simple-custom-attributes/attributes/on-enter-viewport'));
+```
+
+```html
+<div on-enter-viewport='someMethod'></div>
+```
+
 Let me know how it goes!!!

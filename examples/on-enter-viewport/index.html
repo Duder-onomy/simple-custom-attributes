@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>On Enter Viewport</title>
+
+        <style media="screen">
+            #wrapper {
+                height: 10000px;
+            }
+
+            #example {
+                height: 100px;
+                margin-top: 3000px;
+                background-color: lime;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='wrapper'>
+            <div id='example' on-enter-viewport='handleEnterViewport'>
+
+            </div>
+        </div>
+        <script src='./bundle.js'></script>
+    </body>
+</html>
