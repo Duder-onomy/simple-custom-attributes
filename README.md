@@ -226,4 +226,15 @@ customAttributes.addAttribute('on-event', require('simple-custom-attributes/attr
 <div on-event='{ mouseover : handleMouseOver, mouseout : handleMouseOut }'></div>
 ```
 
+### on-click-and-hold
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('on-click-and-hold', require('simple-custom-attributes/attributes/on-click-and-hold'));
+```
+
+```html
+<div on-click-and-hold='someMethod'></div>
+```
+
 Let me know how it goes!!!
