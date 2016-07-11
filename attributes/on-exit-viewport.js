@@ -30,8 +30,8 @@ function unbind(el) {
 
 function handlerObserverEntries(entries) {
     entries.forEach(function(entry) {
-        if(entry.intersectionRatio > 0) {
-            observedElements[entry.target.enterViewportObserverId] && observedElements[entry.target.enterViewportObserverId](entry.intersectionRatio);
+        if(entry.intersectionRatio === 0) {
+            observedElements[entry.target.enterViewportObserverId] && observedElements[entry.target.enterViewportObserverId]();
         }
     });
 }

@@ -245,7 +245,19 @@ customAttributes.addAttribute('on-enter-viewport', require('simple-custom-attrib
 ```
 
 ```html
-<div on-enter-viewport='someMethod'></div>
+<div on-enter-viewport='someMethod'></div> // Note: SomeMethod will be called with the % the element is in the viewport.
 ```
+
+### on-exit-viewport (NOTE!!!! THIS ONLY WORKS IN CHROME 51 BECAUSE IT USES INTERSECTION OBSERVERS)
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('on-exit-viewport', require('simple-custom-attributes/attributes/on-exit-viewport'));
+```
+
+```html
+<div on-exit-viewport='someMethod'></div>
+```
+
 
 Let me know how it goes!!!
