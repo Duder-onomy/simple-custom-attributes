@@ -146,6 +146,7 @@ simpleCustomAttributes.addAttribute('on-input', {
 ## Semi Baked in Attributes
 
 Right now, we included the following into the library cause I use them all the time:
+They are in the repo, but you will need to call `addAttribute` on the instance to actually use them.
 
 #### line-clamp='model.linesToClamp'
 ```javascript
