@@ -9,6 +9,6 @@ function bind(el, htmlToTemplate) {
     el.innerHTML = htmlToTemplate;
 }
 
-function unbind() {
+function unbind(el) {
     el.innerHTML = '';
 }
