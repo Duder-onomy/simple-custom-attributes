@@ -260,5 +260,15 @@ customAttributes.addAttribute('on-exit-viewport', require('simple-custom-attribu
 <div on-exit-viewport='someMethod'></div>
 ```
 
+### inner-html
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('inner-html', require('simple-custom-attributes/attributes/inner-html'));
+```
+
+```html
+<div inner-html='someHtmlString'></div>
+```
 
 Let me know how it goes!!!
