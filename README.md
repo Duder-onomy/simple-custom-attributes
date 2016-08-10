@@ -27,7 +27,7 @@ You can define your own with a simple attribute binding API.
     ```
     Then when you are done, you `unregister`.
     ```javascript
-    simpleCustomAttributes.register(object, rootElement);
+    simpleCustomAttributes.unregister(object, rootElement);
     ```
 
 This will register all custom attributes in the root element. No need to do it one at a time like I have done in the examples below.
