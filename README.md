@@ -271,4 +271,15 @@ customAttributes.addAttribute('inner-html', require('simple-custom-attributes/at
 <div inner-html='someHtmlString'></div>
 ```
 
+### on-progress (Used for video elements)
+```javascript
+var customAttributes = require('simple-custom-attributes');
+
+customAttributes.addAttribute('on-progress', require('simple-custom-attributes/attributes/on-progress'));
+```
+
+```html
+<video on-progress='someMethod'>
+```
+
 Let me know how it goes!!!
